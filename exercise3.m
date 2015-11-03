@@ -7,7 +7,7 @@ for i=1:size(T,2)
     Pelec2(i,1)=T(1,i).pelec;
 end
 % Calculating the mean of the energ demand
-Pmoy=mean(Pelec2);
+Pmoy=mean(Pelec2)
 figure
 
 subplot(2,1,1) 
@@ -52,9 +52,9 @@ esrInuOhms=350;
 totalCapacityInF=2*capEnergyCapacityInWh*60*60/((voltageInV)^2);
 disp(strcat('Total capacity required in farads assuming voltage of one capacitor: ', num2str(totalCapacityInF)));
 
-voltageInV=2.5;
-capacitorInF=5000;
-esrInuOhms=350;
+% voltageInV=2.5;
+% capacitorInF=5000;
+% esrInuOhms=350;
 %the energy capacity of one pack
 energyInOnePackInWh=capacitorInF*(voltageInV^2)/(2*60*60)
 maximalPowerInOneElementInW=0.12*(voltageInV^2)/(esrInuOhms/1000000)
@@ -64,3 +64,5 @@ maximalPowerInOneElementInW=0.12*(voltageInV^2)/(esrInuOhms/1000000)
 NumOfCapEnergy=capEnergyCapacityInWh/energyInOnePackInWh
 NumOfCapPower=maxPowerImposedInW/maximalPowerInOneElementInW
 disp(strcat('Number of capacitors required: ', num2str(ceil(max(NumOfCapEnergy,NumOfCapPower)))))
+
+
