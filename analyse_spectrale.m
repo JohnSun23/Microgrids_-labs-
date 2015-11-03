@@ -11,7 +11,7 @@ plot(1:size(T,2),Pelec2);
 fece=1
 Pmoy=mean(Pelec2)
 
-figure(5)
+figure
 
 subplot(2,1,1) 
 plot (Pelec2)
@@ -34,4 +34,4 @@ title(strcat('Allure temporelle de Pelec2 - ',num2str(Pmoy)))
  ylabel('amplitude (W)');
  title('analyse spectrale signal');
  
-
+S2max

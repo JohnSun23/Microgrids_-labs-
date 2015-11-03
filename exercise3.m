@@ -6,7 +6,7 @@ Pelec2=zeros(size(T,2),1);
 for i=1:size(T,2)
     Pelec2(i,1)=T(1,i).pelec;
 end
-
+% Calculating the mean of the energ demand
 Pmoy=mean(Pelec2);
 figure
 
@@ -32,11 +32,11 @@ title('Actual power provided by the storage device');
 energyStoredInWh=zeros(size(ActualPelec2,1),1);
 energyStoredInWh(1,1)=1000;
 for i=2:size(ActualPelec2,1)
-    energyStoredInWh(i,1)=energyStoredInWh(i-1,1)+(ActualPelec2(i-1,1)/(60*60));
+    energyStoredInWh(i,1)=energyStoredInWh(i-1,1)-(ActualPelec2(i-1,1)/(60*60));
 end
 figure;
 plot(energyStoredInWh)
-legend(strcat('Useful energy: ',num2str(max(energyStoredInWh)-min(energyStoredInWh))));
+legend(strcat('Useful energy (in Wh): ',num2str(max(energyStoredInWh)-min(energyStoredInWh))));
 title('Energy stored in storage device');
 disp(strcat('Useful energy: ',num2str(max(energyStoredInWh)-min(energyStoredInWh))));
 %Assuming 75 percent DoD, the capactiy energy capacity can be calculated

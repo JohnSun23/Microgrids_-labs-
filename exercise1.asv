@@ -22,9 +22,7 @@ disp('Average power: ' );
 disp(pavg);
 % Calculating the PPH
 % If both average and maximum are greater than zero, 
-% Pavg and Pmax will mostly be greater than zero.
-% If it is less than zero, we definitely need storage and hence PPH is set
-% to 1.
+% Think of the logic!!
 if(pavg>=0 && pmax>0)
     pph=1-(pavg/pmax);
 else
